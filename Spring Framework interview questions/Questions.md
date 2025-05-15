@@ -176,3 +176,225 @@ A Spring bean goes through the following life cycle stages:
 
 ---
 
+## ☘️ Spring Core 
+
+---
+
+### ❓ 13. What is Spring Java-Based Configuration?
+
+🔧 Instead of writing XML files, you can use Java classes to configure Spring beans.
+
+✅ **Why it's better:**
+
+* Easy to read and maintain
+* Auto-complete and error checking in IDE
+* Less chance of typos than XML
+
+📝 You use `@Configuration` to declare a config class, and `@Bean` to define beans.
+
+---
+
+### 📁 14. Can We Have Multiple Spring Configuration Files?
+
+✅ Yes! You can split configurations into multiple files for better organization (like `DatabaseConfig`, `SecurityConfig`, etc.).
+
+🧩 Combine them using:
+
+* `@Import` (Java config)
+* `<import>` (XML config)
+
+---
+
+### 🔐 15. What is Spring Security?
+
+Spring Security is a powerful tool to **protect** your web applications.
+
+🔒 It handles:
+
+* Login & Logout
+* Password encryption
+* Role-based access
+* CSRF protection
+
+💡 It works by **filtering requests** and checking user roles and permissions.
+
+---
+
+### 🚀 16. What is Spring Boot?
+
+Spring Boot helps you **start a Spring project faster** with:
+
+* Auto configurations
+* Built-in servers (like Tomcat)
+* No XML files required
+
+🏁 Just run your `main()` method and your app is up!
+
+---
+
+### 🧠 17. Common Design Patterns in Spring
+
+| 🧩 Pattern Name      | 📌 Usage in Spring              |
+| -------------------- | ------------------------------- |
+| 🔁 Singleton         | Default bean scope              |
+| 🏭 Factory           | BeanFactory, ApplicationContext |
+| 👥 Proxy             | AOP, Security                   |
+| 📜 Template Method   | JdbcTemplate, RestTemplate      |
+| 🖼️ MVC              | Spring MVC Architecture         |
+| 🛎️ Front Controller | DispatcherServlet               |
+| 📦 DAO               | Data Access Layer               |
+| 🧲 Observer          | Event handling                  |
+
+---
+
+### 🍃 18. How Does Prototype Scope Work?
+
+🔁 Normally Spring creates **one bean instance** (singleton).
+
+🆕 With `prototype` scope, a **new object is created each time** you ask for the bean.
+
+📦 Useful when you don’t want to share the same object.
+
+---
+
+## 🌐 Spring MVC (Web Layer)
+
+---
+
+### 🌍 19. How to Access ServletContext and ServletConfig?
+
+Spring gives you access to web-specific objects like:
+
+* 🌐 `ServletContext` → Global app settings
+* ⚙️ `ServletConfig` → Settings for specific servlets
+
+✅ You can use `@Autowired` or implement special interfaces to access them.
+
+---
+
+### 🎮 20. What is a Controller?
+
+A `@Controller` is a class that handles **web requests** (like buttons clicked on a website).
+
+🧭 It takes input, processes it, and returns a view (HTML or data).
+
+Example: When someone visits `/login`, a controller method decides what to do.
+
+---
+
+### 🧭 21. What is @RequestMapping?
+
+🔗 It connects a **URL** to a **method** in a controller.
+
+🗺️ For example, when someone goes to `/products`, the method with `@RequestMapping("/products")` will be called.
+
+✨ There are shortcuts too:
+
+* `@GetMapping` (for GET requests)
+* `@PostMapping` (for POST requests)
+
+---
+
+## 💾 Spring Data Access
+
+---
+
+### 🛠️ 22. What is JdbcTemplate?
+
+JdbcTemplate helps you work with databases **easily**.
+
+✅ It:
+
+* Connects to DB
+* Executes queries
+* Handles exceptions
+
+📉 You don’t have to write long and messy JDBC code.
+
+---
+
+### 🔄 23. How to Enable Transactions?
+
+Transactions help **keep data safe** during operations like insert, update, delete.
+
+💡 Use `@Transactional` on methods:
+
+* If something fails, changes are rolled back.
+* Ensures data consistency.
+
+---
+
+### 🗃️ 24. What is Spring DAO?
+
+DAO = **Data Access Object**
+
+🎯 It's a design pattern used to **separate DB code** from business logic.
+
+Spring provides tools like `JdbcTemplate` or `JpaRepository` to make this easy.
+
+---
+
+## 🌀 Spring AOP (Aspect Oriented Programming)
+
+---
+
+### 💡 25. What is AOP?
+
+AOP = Aspect Oriented Programming
+
+🔍 Helps you add **common features** like:
+
+* Logging
+* Security
+* Transactions
+
+📦 Without touching your actual business logic.
+
+---
+
+### 🧩 26. AOP Concepts Made Simple
+
+| 🧠 Term      | 📘 Meaning                                  |
+| ------------ | ------------------------------------------- |
+| ⭐ Aspect     | The cross-cutting code (e.g., logging)      |
+| 🎯 Advice    | What should run (e.g., before/after method) |
+| ⏱️ JoinPoint | The place where code is inserted            |
+| 📌 Pointcut  | Rule to select JoinPoints                   |
+
+🛠️ You define these in classes using annotations like `@Aspect`, `@Before`, etc.
+
+---
+
+### 🪡 27. What is Weaving in AOP?
+
+🧵 Weaving = Connecting aspects with actual code.
+
+🕐 In Spring, weaving happens at **runtime** using **proxies** (no need for special compilers).
+
+---
+
+## 🌊 Spring 5 & Reactive Programming
+
+---
+
+### ⚡ 28. What is Reactive Programming?
+
+It’s a modern way to build apps that are:
+
+* 🚀 Fast
+* 🧠 Asynchronous
+* 🌐 Non-blocking
+
+💥 Instead of waiting for things (like database or API), your app reacts when data is ready.
+
+📦 Uses:
+
+* `Mono<T>` → 0 or 1 item
+* `Flux<T>` → 0 to many items
+
+✅ Great for apps that need to handle **lots of users at once**.
+
+---
+
+
+
