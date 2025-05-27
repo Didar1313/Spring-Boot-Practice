@@ -1,1 +1,1 @@
-# Spring-Boot-Practices
+# Spring-Boot-Theory
